@@ -9,7 +9,8 @@
     ],
     "require": {
         "illuminate/contracts": "^8.15",
-        "lorisleiva/laravel-actions": "^2.0"
+        "lorisleiva/laravel-actions": "^2.0",
+        "nuwave/lighthouse": "^5.7"
     },
     "autoload": {
         "psr-4": {
