@@ -1,6 +1,6 @@
 # Laravel Actions Lighthouse
 
-Create Actions with `lorisleiva/laravel-actions` that are resolved by `nuwave/lighthouse` allowing a GraphQL query/mutation to hit an action directly.
+Create Actions with [Laravel Actions](https://laravelactions.com/) that are resolved by [Lighthouse](https://lighthouse-php.com/) allowing a GraphQL query/mutation to hit an action directly.
 
 ## Install
 
