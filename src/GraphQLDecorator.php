@@ -2,17 +2,15 @@
 
 namespace Petecoop\LaravelActionsLighthouse;
 
-use Illuminate\Contracts\Container\Container;
 use Lorisleiva\Actions\Concerns\DecorateActions;
 
 class GraphQLDecorator
 {
     use DecorateActions;
 
-    public function __construct($action, Container $container)
+    public function __construct($action)
     {
         $this->setAction($action);
-        $this->setContainer($container);
     }
 
     public function __invoke($_, $args)
