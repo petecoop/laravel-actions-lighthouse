@@ -32,6 +32,7 @@ type Query {
 Ensure you register the path to the handler in `config/lighthouse.php` this may need to be published first: `php artisan vendor:publish --tag=lighthouse-config`
 
 If adding a mutation then add to mutations - this needs to be done for each folder of actions
+
 ```php
 [
     'namespaces' => [
@@ -80,6 +81,12 @@ class SomeAction
 ## Validation
 
 You can use [Laravel Action Validation Rules](https://laravelactions.com/2.x/add-validation-to-controllers.html#adding-validation-rules) by using the `@actionValidator` directive.
+
+Add `"Petecoop\\LaravelActionsLighthouse"` to your `config/lighthouse.php`:
+
+```php
+"directives" => ["App\\GraphQL\\Directives", "Petecoop\\LaravelActionsLighthouse"],
+```
 
 for example:
 
