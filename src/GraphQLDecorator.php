@@ -15,13 +15,11 @@ class GraphQLDecorator
 
     public function __invoke($_, $args)
     {
-        if ($this->hasMethod('asGraphQL')) {
-            return $this->fromActionMethod('asGraphQL', [$_, $args]);
+        if ($this->hasMethod("asGraphQL")) {
+            return $this->fromActionMethod("asGraphQL", [$_, $args]);
         }
 
-        if ($this->hasMethod('handle')) {
-            return $this->fromActionMethod('handle', [$args]);
-        }
+        return $this->action->handle(..$args);
     }
 
     public function getAction()

@@ -47,33 +47,41 @@ If adding a mutation then add to mutations - this needs to be done for each fold
 
 You can then use the args from GraphQL directly in your handler:
 
+```gql
+type Mutation {
+    updateUserName(id: ID!, name: String!): User!
+}
+```
+
+The arguments are passed in as named arguments to the handle method:
+
 ```php
-class SomeAction
+class UpdateUserName
 {
     use AsAction, AsGraphQL;
 
-    public function handle(array $args)
+    public function handle(string $id, string $name)
     {
-
+        //...
     }
 }
 ```
 
-Or use `asGraphQL` to pull out args from the graphql query:
+Or use `asGraphQL` to pull out args from the graphql query, useful if you want to have more control over the args:
 
 ```php
 class SomeAction
 {
     use AsAction, AsGraphQL;
 
-    public function handle(int $userId)
+    public function handle(int $userId, string $name)
     {
         //...
     }
 
     public function asGraphQL($_, $args)
     {
-        return $this->handle($args['user_id']);
+        return $this->handle($args['id'], $args['name']);
     }
 }
 ```
@@ -103,7 +111,7 @@ class UpdateUserName
 {
     use AsAction, AsGraphQL;
 
-    public function handle(array $args)
+    public function handle(string $id, string $name)
     {
         //...
     }
