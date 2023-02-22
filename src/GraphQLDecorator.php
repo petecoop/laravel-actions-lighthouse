@@ -19,7 +19,7 @@ class GraphQLDecorator
             return $this->fromActionMethod("asGraphQL", [$_, $args]);
         }
 
-        return $this->action->handle(..$args);
+        return $this->action->handle(...$args);
     }
 
     public function getAction()
